@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">显示全局设置</button>
+    <button id="btn2">修改全局设置</button>
+    <script src="axios.min.js"></script>
+    <script>
+        btn1.onclick=function(){
+            axios.get("http://127.0.0.1:8090/admin/setting").then(res=>{
+                console.log(res.data)
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+        btn2.onclick=function(){
+            var data={sid:1,appName:"小肥羊",apiUrl:"http://127.0.0.1:8088",adminUrl:"http://127.0.0.1:8089",appUrl:"http://127.0.0.1:8090",icp:"京",copyright:"©"}
+            axios.put("http://127.0.0.1:8090/admin/setting",data).then(res=>{
+                console.log(res.data)
+            }).catch(err=>{
+                console.log(err)
+            })
+        }
+    </script>
+</body>
+</html>
