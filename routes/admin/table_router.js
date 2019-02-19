@@ -10,7 +10,7 @@ module.exports=router;
  * 
  */
 router.get('/',(req,res)=>{
-    var sql="select * from xfn_table ";
+    var sql="select * from xfn_table order by tid ";
     pool.query(sql,(err,result)=>{
         if(err) throw err;
         res.send(result)

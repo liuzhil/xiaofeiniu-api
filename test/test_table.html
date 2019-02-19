@@ -14,8 +14,8 @@
     <script>
         btn1.onclick=function(){
             axios.get("http://127.0.0.1:8090/admin/table").then(res=>{
-                console.log(res)
-            }).then(err=>{
+                console.log(res.data)
+            }).catch(err=>{
                 console.log(err)
             })
         }

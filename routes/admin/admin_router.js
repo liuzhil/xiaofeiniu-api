@@ -13,8 +13,6 @@ module.exports=router;
 router.get("/login/:aname/:apwd",(req,res)=>{
     var aname=req.params.aname;
     var apwd=req.params.apwd;
-    console.log(aname)
-    console.log(apwd)
     var sql="select aid from xfn_admin where aname=? and apwd=password(?)";
     pool.query(sql,[aname,apwd],(err,result)=>{
         if(err) throw err;

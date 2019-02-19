@@ -12,7 +12,7 @@ router.get('/',(req,res)=>{
     var sql="select * from xfn_settings ";
     pool.query(sql,(err,result)=>{
         if(err) throw err;
-        res.send(result)
+        res.send(result[0])
     })
 })
 
